@@ -16,14 +16,14 @@ def fetch_card_info():
     # Show the card's info:
     # Type3Tag:NDEF Type, RC-SAXX/X:IC Chip No., ID:IDm(2byte-6byte), PMM, SYS
     clf = nfc.ContactlessFrontend('usb')
-    _tag = clf.connect(rdwr={'on-connect': lambda _tag: False})
-    return _tag
+    tag = clf.connect(rdwr={'on-connect': lambda tag: False})
+    print('>> ', tag)
+    return tag.dump()
 
 
 if __name__ == '__main__':
     print('connected: ', is_recognized_reader())
-    tag = fetch_card_info()
-    print('>> ', tag)
-    print(('  \n  '.join(tag.dump())))  # Nested : System > Area > Service > Block, Random Service
+    tag_dump = fetch_card_info()
+    print(('  \n  '.join(tag_dump)))  # Nested : System > Area > Service > Block, Random Service
 
 
