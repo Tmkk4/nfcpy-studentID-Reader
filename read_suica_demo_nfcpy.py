@@ -29,7 +29,7 @@ def connected(tag):
         except Exception as e:
             print('error: %s' % e, file=sys.stderr)
     else:
-        print('error: tag isn\'t Sony Felica', file=sys.stderr)
+        print('error: tag isn\'t SONY Felica', file=sys.stderr)
 if __name__ == '__main__':
     clf = nfc.ContactlessFrontend('usb')
     print('>> ')
