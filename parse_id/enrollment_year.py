@@ -8,7 +8,8 @@ ref:
 import re
 import datetime
 
-def get_enrollement_year(student_id):
+
+def get_enrollment_year(student_id):
     """
     Return the enrollment year and semester on the student ID's student
     :param student_id: e.g., 0XXX0000 or 0XXXX0000 :: str
@@ -64,9 +65,9 @@ if __name__ == '__main__':
     flg, g = verify_id(id)
     print(f'flag:{flg}\ngrade:{g}')
 
-    info = get_enrollemnt_year(id)
+    info = get_enrollement_year(id)
     print(info)
 
-    info = get_enrollemnt_year('6MDA2900')
+    info = get_enrollement_year('6MDA2900')
     print(info)
 
