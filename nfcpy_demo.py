@@ -8,9 +8,11 @@ ref:
 """
 import nfc
 
+
 def is_recognized_reader():
     clf = nfc.ContactlessFrontend()
     return clf.open('usb')  # ** found usb:~ at usb:001:004 <- $ python -m nfc
+
 
 def fetch_card_info():
     # Show the card's info:
@@ -18,12 +20,15 @@ def fetch_card_info():
     clf = nfc.ContactlessFrontend('usb')
     tag = clf.connect(rdwr={'on-connect': lambda tag: False})
     print('>> ', tag)
-    return tag.dump()
+    tag_dump = tag.dump()
+    clf.close()
+    return tag_dump
 
 
 if __name__ == '__main__':
     print('connected: ', is_recognized_reader())
     tag_dump = fetch_card_info()
-    print(('  \n  '.join(tag_dump)))  # Nested : System > Area > Service > Block, Random Service
+    print('tag dump: ', tag_dump)
+    #print(('  \n  '.join(tag_dump)))  # Nested : System > Area > Service > Block, Random Service
 
 

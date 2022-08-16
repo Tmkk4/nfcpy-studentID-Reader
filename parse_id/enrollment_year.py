@@ -8,7 +8,7 @@ ref:
 import re
 import datetime
 
-def get_enrollemnt_year(student_id):
+def get_enrollement_year(student_id):
     """
     Return the enrollment year and semester on the student ID's student
     :param student_id: e.g., 0XXX0000 or 0XXXX0000 :: str

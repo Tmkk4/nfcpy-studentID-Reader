@@ -13,7 +13,6 @@ ref:
 """
 # SuiCa : tag obj : nfc.tag.tt3_sony.FelicaStandard
 import sys
-
 import nfc
 
 SERVICE_CODE = 0x090F
